@@ -6,14 +6,17 @@ class SubwayMap extends React.Component {
     super(props)
 
   }
-
+  marking=()=>{
+    const markers= this.props.datas.map(element => {
+       
+       return [element.tmY[0],element.tmX[0]]
+   });
+   this.props.on(markers)
+  }
 
   componentDidUpdate() {
     if (this.props.datas) { 
-        this.props.datas.forEach(element => {
-        this.props.on(element.tmY[0],element.tmX[0])
-
-      });
+      this.marking()
     }
   }
 
