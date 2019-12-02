@@ -7,16 +7,21 @@ class SubwayMap extends React.Component {
 
   }
   marking=()=>{
+    console.log('실행')
     const markers= this.props.datas.map(element => {
        
        return [element.tmY[0],element.tmX[0]]
    });
-   this.props.on(markers)
+   
+   
+   this.props.on(this.props.ohno,markers)
   }
 
   componentDidUpdate() {
     if (this.props.datas) { 
       this.marking()
+    }else{
+      this.props.on(this.props.ohno,undefined)
     }
   }
 
