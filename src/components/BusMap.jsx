@@ -1,20 +1,24 @@
 /*global kakao*/
 import React from 'react';
 
-class SubwayMap extends React.Component {
+class BusMap extends React.Component {
   constructor(props) {
     super(props)
 
   }
-marking=()=>{
-    
+  marking=()=>{
+    console.log('실행')
+    const markers= this.props.datas.map(element => {
+       
+       return [element.tmY[0],element.tmX[0]]
+   });
    
    
-   this.props.on(this.props.ohno)
+   this.props.on(markers)
   }
 
   componentDidUpdate() {
-    if (this.props.ohno) { 
+    if (this.props.datas) { 
       this.marking()
     }
   }
@@ -29,4 +33,4 @@ marking=()=>{
   }
 
 }
-export default SubwayMap;
+export default BusMap;

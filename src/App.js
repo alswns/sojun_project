@@ -1,7 +1,9 @@
 /*global kakao*/
 import React from 'react';
 import Main from './page/Main';
+import { BrowserRouter as Router,Route,Switch } from 'react-router-dom'
 import { createGlobalStyle } from 'styled-components'
+import Subway from './page/Subway';
 const GlobalStyle = createGlobalStyle`
   *{
     margin:0;
@@ -29,7 +31,19 @@ class App extends React.Component {
     return (
       <>
       <GlobalStyle/>
-        <Main />
+      <Router>
+      <Route path='/' exact>
+            <Subway></Subway>
+          </Route>
+          <Route path='/subway' exact>
+            <Subway></Subway>
+          </Route>
+          <Route path='/bus' exact>
+            <Main></Main>
+          </Route>
+
+      </Router>
+        
         
       </>
     )
