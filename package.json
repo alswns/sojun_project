@@ -16,7 +16,7 @@
     "react-scripts": "3.2.0",
     "scriptjs": "^2.5.9",
     "styled-components": "^4.4.1",
-    "xlsx": "^0.15.2",
+    "xlsx": "^0.17.0",
     "xml2js": "^0.4.22"
   },
   "scripts": {
